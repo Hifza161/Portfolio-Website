@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Lab Project | Hifza Rasool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<!-- CANVAS PARTICLES -->
+<canvas id="particles-canvas"></canvas>
+<!-- LIGHTNING BACKGROUND -->
+<div class="lightning-bg">
+  <div class="lightning-orb orb-1"></div>
+  <div class="lightning-orb orb-2"></div>
+  <div class="lightning-orb orb-3"></div>
+</div>
+
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Hifza<span>.</span></a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<div class="project-hero">
+  <div>
+    <span class="project-hero-emoji">🤖</span>
+    <div class="project-type">Artificial Intelligence · Python</div>
+    <h1 class="project-title-big">AI Lab Project</h1>
+    <p class="project-summary">
+      Implemented classic AI search algorithms — A* and Greedy Best-First Search — to solve pathfinding problems on grid-based maps efficiently.
+    </p>
+    <div class="project-meta">
+      <div class="meta-item">
+        <label>Type</label>
+        <span>AI / Algorithms</span>
+      </div>
+      <div class="meta-item">
+        <label>Language</label>
+        <span>Python</span>
+      </div>
+      <div class="meta-item">
+        <label>Domain</label>
+        <span>Pathfinding</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="project-content">
+
+  <div class="content-section">
+    <h2>Project Overview</h2>
+    <p>
+      This lab project explored how intelligent agents navigate problem spaces using informed search strategies. The goal was to implement and compare algorithms that find optimal or near-optimal paths from a start state to a goal state on a grid.
+    </p>
+    <p>
+      Both A* and Greedy Best-First Search (GBFS) were implemented from scratch in Python and tested on several grid configurations with varying obstacles and goal positions.
+    </p>
+  </div>
+
+  <div class="content-section">
+    <h2>Algorithms Implemented</h2>
+    <div class="algo-grid">
+      <div class="algo-card">
+        <div class="algo-name">A* Search</div>
+        <div class="algo-desc">Uses f(n) = g(n) + h(n) — combines actual cost from start with heuristic estimate to goal. Guarantees the optimal path.</div>
+      </div>
+      <div class="algo-card">
+        <div class="algo-name">Greedy BFS (GBFS)</div>
+        <div class="algo-desc">Uses only h(n) — the heuristic estimate to the goal. Faster but not always optimal. Good for time-constrained scenarios.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Sample Code Snippet</h2>
+    <div class="code-block">
+<span class="code-comment"># A* Search implementation</span>
+<span class="code-keyword">import</span> heapq
+
+<span class="code-keyword">def</span> <span class="code-fn">astar</span>(grid, start, goal):
+    open_set = []
+    heapq.heappush(open_set, (<span class="code-str">0</span>, start))
+    came_from = {}
+    g_score = {start: <span class="code-str">0</span>}
+
+    <span class="code-keyword">while</span> open_set:
+        _, current = heapq.heappop(open_set)
+        <span class="code-keyword">if</span> current == goal:
+            <span class="code-keyword">return</span> reconstruct_path(came_from, current)
+
+        <span class="code-keyword">for</span> neighbor <span class="code-keyword">in</span> get_neighbors(grid, current):
+            tentative_g = g_score[current] + <span class="code-str">1</span>
+            <span class="code-keyword">if</span> tentative_g &lt; g_score.get(neighbor, float(<span class="code-str">'inf'</span>)):
+                came_from[neighbor] = current
+                g_score[neighbor] = tentative_g
+                f = tentative_g + heuristic(neighbor, goal)
+                heapq.heappush(open_set, (f, neighbor))
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Key Learnings</h2>
+    <ul class="feature-list">
+      <li>Understood the trade-off between optimality (A*) and speed (GBFS)</li>
+      <li>Implemented Manhattan distance as the heuristic function</li>
+      <li>Explored how obstacle density affects algorithm performance</li>
+      <li>Gained hands-on experience with priority queues and graph traversal</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Technologies Used</h2>
+    <div class="tech-grid">
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">NumPy</span>
+      <span class="tech-pill">A* Algorithm</span>
+      <span class="tech-pill">GBFS</span>
+      <span class="tech-pill">Heapq</span>
+      <span class="tech-pill">Grid Search</span>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <!-- Replace # with your GitHub repo link -->
+    <a href="https://github.com/Hifza161" class="btn-primary">View on GitHub</a>
+    <a href="index.html" class="btn-outline">← Back to Projects</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Designed & built by <strong>Hifza Rasool</strong> ✦ 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
