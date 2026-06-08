@@ -59,21 +59,31 @@ nav.scrolled{padding:.7rem clamp(1.2rem,4vw,3rem);background:rgba(4,5,15,.96);}
   nav{padding:.85rem 1.2rem;}
   .hamburger{display:flex;}
   .nav-links{
-    display:none;flex-direction:column;
-    position:absolute;top:100%;right:0;left:0;
-    background:rgba(9,11,26,.97);
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    position:fixed;
+    top:0;right:0;bottom:0;left:0;
+    background:rgba(4,5,15,.96);
     backdrop-filter:blur(24px);
-    border-bottom:1px solid var(--border);
-    z-index:250;
-    padding:.5rem 0;
+    z-index:249;
+    padding:0;
   }
   .nav-links.open{display:flex;}
-  .nav-links li{border-bottom:1px solid rgba(255,255,255,.04);}
+  .nav-links li{border:none;}
   .nav-links a{
-    font-size:.95rem;
-    padding:.75rem 1.5rem;
+    font-size:1.3rem;
+    font-weight:600;
+    padding:1rem 2rem;
     display:block;
+    text-align:center;
+    border:none;
+    color:var(--muted);
   }
+  .nav-links a:hover,
+  .nav-links a.active{color:var(--cyan);}
 }
 
 /* ════ SHARED ════ */
@@ -141,18 +151,23 @@ section{position:relative;z-index:2;}
   .hero-img-side{width:clamp(155px,60vw,230px);height:clamp(205px,80vw,310px);margin-top:2rem;}
   .img-ring-2{display:none;}
   .scroll-hint{margin-top:.8rem;}
-  /* all 4 badges visible, tucked closer to image */
-  .badge-figma {top:2%;   left:-36px;  font-size:.58rem; padding:.2rem .5rem;}
-  .badge-python{bottom:24%;left:-38px; font-size:.58rem; padding:.2rem .5rem;}
-  .badge-js    {top:12%;  right:-22px; font-size:.58rem; padding:.2rem .5rem;}
-  .badge-cpp   {bottom:4%;right:-16px; font-size:.58rem; padding:.2rem .5rem; display:flex;}
-  .badge-vs    {display:none;} /* hide VS-Code on mobile — too many */
+
+  /* reset ALL badges first */
+  .float-badge{font-size:.58rem;padding:.2rem .52rem;}
+
+  /* position each badge closer to image edges */
+  .badge-figma {display:flex;top:3%;   left:-34px;}
+  .badge-python{display:flex;bottom:25%;left:-36px;}
+  .badge-js    {display:flex;top:13%;  right:-20px;}
+  .badge-cpp   {display:flex;bottom:5%;right:-14px;}
+  .badge-vs    {display:none;}
 }
 @media(max-width:400px){
   .hero-bg-name{font-size:clamp(3rem,24vw,5.5rem);}
-  .badge-figma {left:-28px;}
   .badge-python{display:none;}
   .badge-cpp   {display:none;}
+  .badge-figma{left:-28px;}
+  .badge-js{right:-16px;}
 }
 
 /* ════ ABOUT ════ */
