@@ -9,14 +9,9 @@
 </head>
 <body>
 
-<!-- CURSOR (desktop only) -->
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- CANVAS PARTICLES -->
 <canvas id="particles-canvas"></canvas>
-
-<!-- LIGHTNING ORBS -->
 <div class="lightning-bg">
   <div class="lightning-orb orb-1"></div>
   <div class="lightning-orb orb-2"></div>
@@ -30,24 +25,19 @@
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home" onclick="closeMenu()">Home</a></li>
-    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#home"     onclick="closeMenu()">Home</a></li>
+    <li><a href="#about"    onclick="closeMenu()">About</a></li>
     <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
-    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    <li><a href="#skills"   onclick="closeMenu()">Skills</a></li>
+    <li><a href="#contact"  onclick="closeMenu()">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+<!-- HERO -->
 <section id="home">
-
-  <!-- BIG BACKGROUND NAME — centered, behind everything -->
   <div class="hero-bg-name" aria-hidden="true">HIFZA</div>
-
-  <!-- NEON AURA behind photo -->
   <div class="hero-aura"></div>
 
-  <!-- PHOTO — centered, in front of name -->
   <div class="hero-img-side">
     <div class="img-ring img-ring-1"></div>
     <div class="img-ring img-ring-2"></div>
@@ -55,37 +45,33 @@
     <div class="float-badge badge-python">🐍 Python</div>
     <div class="float-badge badge-js">⚡ JS</div>
     <div class="float-badge badge-cpp">⚙️ C++</div>
+    <div class="float-badge badge-vs">💻 VS-Code</div>
     <div class="img-frame">
-      <div class="img-neon-border"></div>
-      <img
-        src="images/profile_pic.png"
-        alt="Hifza Rasool"
-        class="hero-photo"
-        id="heroPhoto"
-      />
+      <img src="images/profile_pic.png" alt="Hifza Rasool" class="hero-photo" id="heroPhoto"/>
       <div class="img-overlay-glow"></div>
     </div>
   </div>
 
-  <!-- SCROLL HINT — below photo, not overlapping -->
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>scroll</span>
   </div>
 </section>
 
-<!-- ═══════════════ ABOUT ═══════════════ -->
+<!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="about-inner reveal">
       <div class="about-text">
         <div class="section-label">About Me</div>
-        <!-- Animated cycling title -->
-        <div class="about-title-wrap">
-          <span class="about-title-cycling" id="aboutTitle"></span><span class="about-title-cursor">|</span>
-        </div>
-        <p>I'm a Software Engineering student who genuinely loves the process of turning ideas into working software. Whether it's designing an intuitive UI in Figma or implementing search algorithms in C++, I'm always pushing to learn more.</p>
-        <p>I enjoy creative challenges, real-world problem solving, and building projects that are both functional and beautiful.</p>
+        <h2 class="about-heading">
+          Building software that's<br>
+          <span class="gradient-text neon-heading">functional & attractive.</span>
+        </h2>
+        <p class="about-tagline">
+  <span class="tagline-animate" id="taglineText"></span><span class="tagline-cursor">|</span><br>
+  <span class="tagline-sub">Turning ideas into scalable, user-friendly applications through code, creativity, and a commitment to continuous growth.</span>
+</p>
       </div>
       <div class="about-stats">
         <div class="stat-card reveal">
@@ -109,13 +95,13 @@
   </div>
 </section>
 
-<!-- ═══════════════ PROJECTS ═══════════════ -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
     <div class="projects-header reveal">
       <div class="section-label">Work</div>
       <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
-      <p class="projects-subtitle">Hover to glow · Drag or tap arrows to explore</p>
+      <p class="projects-subtitle">Swipe or tap arrows to explore</p>
     </div>
   </div>
 
@@ -123,7 +109,6 @@
     <button class="scroll-arrow arrow-left" id="arrowLeft" aria-label="Scroll left">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     </button>
-
     <div class="projects-scroll-track" id="projectsTrack">
 
       <a href="project-travel.html" class="project-card reveal">
@@ -133,86 +118,68 @@
         <div class="project-icon">✈️</div>
         <div class="project-title">Travel App (UX/UI)</div>
         <p class="project-desc">Smart travel planning app in Figma with itinerary planning, budget tracking, and safety tools.</p>
-        <div class="project-tags">
-          <span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Design</span>
-        </div>
+        <div class="project-tags"><span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Design</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="complaint-management-project.html" class="project-card reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">02</div>
         <div class="project-icon">🏢</div>
         <div class="project-title">Complaint Management System</div>
         <p class="project-desc">SRE group project with AI-based complaint categorization and role-based workflow system.</p>
-        <div class="project-tags">
-          <span class="tag">SRE</span><span class="tag">Figma</span><span class="tag">System Design</span>
-        </div>
+        <div class="project-tags"><span class="tag">SRE</span><span class="tag">Figma</span><span class="tag">System Design</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="project-calculator.html" class="project-card reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">03</div>
         <div class="project-icon">⚙️</div>
         <div class="project-title">Neon Calculator</div>
         <p class="project-desc">Neon calculator with interactive light and dark modes and vivid glowing colors.</p>
-        <div class="project-tags">
-          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-        </div>
+        <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="tic-tac-toe.html" class="project-card reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">04</div>
         <div class="project-icon">🎮</div>
         <div class="project-title">Tic Tac Toe</div>
         <p class="project-desc">Modern browser game with smooth gameplay, winner detection, and interactive animations.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-        </div>
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="stone-paper-scissors.html" class="project-card reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">05</div>
         <div class="project-icon">🪨</div>
         <div class="project-title">Stone Paper Scissors</div>
         <p class="project-desc">Fun interactive browser game with score tracking and smooth UI animations.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-        </div>
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="project-ai.html" class="project-card reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">06</div>
         <div class="project-icon">🤖</div>
         <div class="project-title">AI Lab Project</div>
         <p class="project-desc">A* and GBFS search algorithms to solve pathfinding problems efficiently in Python.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">A* Search</span><span class="tag">AI</span>
-        </div>
+        <div class="project-tags"><span class="tag">Python</span><span class="tag">A* Search</span><span class="tag">AI</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
     </div>
-
     <button class="scroll-arrow arrow-right" id="arrowRight" aria-label="Scroll right">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
 </section>
 
-<!-- ═══════════════ SKILLS ═══════════════ -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <div class="reveal">
@@ -220,45 +187,42 @@
       <h2 class="section-title">Skills & <span class="gradient-text">Tools</span></h2>
     </div>
 
-    <!-- FLOATING 3D SKILL ICONS ROW -->
     <div class="skills-icons-row reveal">
-      <div class="skill-icon-card float-skill" style="--d:0s">
+      <div class="skill-icon-card" style="--d:0s">
         <div class="skill-icon-emoji">🖥️</div>
         <div class="skill-icon-label">C / C++</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:0.3s">
+      <div class="skill-icon-card" style="--d:0.15s">
         <div class="skill-icon-emoji">🐍</div>
         <div class="skill-icon-label">Python</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:0.6s">
+      <div class="skill-icon-card" style="--d:0.3s">
         <div class="skill-icon-emoji">⚡</div>
         <div class="skill-icon-label">JavaScript</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:0.9s">
+      <div class="skill-icon-card" style="--d:0.45s">
         <div class="skill-icon-emoji">🌐</div>
         <div class="skill-icon-label">HTML/CSS</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:1.2s">
+      <div class="skill-icon-card" style="--d:0.6s">
         <div class="skill-icon-emoji">🎨</div>
         <div class="skill-icon-label">Figma</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:1.5s">
+      <div class="skill-icon-card" style="--d:0.75s">
         <div class="skill-icon-emoji">🔧</div>
         <div class="skill-icon-label">Git</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:1.8s">
+      <div class="skill-icon-card" style="--d:0.9s">
         <div class="skill-icon-emoji">💻</div>
         <div class="skill-icon-label">VS Code</div>
       </div>
-      <div class="skill-icon-card float-skill" style="--d:2.1s">
+      <div class="skill-icon-card" style="--d:1.05s">
         <div class="skill-icon-emoji">📊</div>
         <div class="skill-icon-label">NumPy</div>
       </div>
     </div>
 
-    <!-- SKILL BARS -->
     <div class="skills-grid">
-
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
         <div class="skill-category"><span>🖥</span> Languages</div>
@@ -281,7 +245,6 @@
           </div>
         </div>
       </div>
-
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
         <div class="skill-category"><span>🌐</span> Frontend</div>
@@ -300,7 +263,6 @@
           </div>
         </div>
       </div>
-
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
         <div class="skill-category"><span>🛠</span> Tools</div>
@@ -323,12 +285,11 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ CONTACT ═══════════════ -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="contact-inner reveal">
@@ -339,26 +300,17 @@
         <div class="contact-links">
           <a href="mailto:hifzarasool16@email.com" class="contact-link">
             <div class="contact-link-icon">📧</div>
-            <div>
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-val">hifzarasool16@email.com</div>
-            </div>
+            <div><div class="contact-link-label">Email</div><div class="contact-link-val">hifzarasool16@email.com</div></div>
             <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/hifza-rasool-6b8ab2372" target="_blank" class="contact-link">
             <div class="contact-link-icon">💼</div>
-            <div>
-              <div class="contact-link-label">LinkedIn</div>
-              <div class="contact-link-val">linkedin.com/in/hifza-rasool-6b8ab2372</div>
-            </div>
+            <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/hifza-rasool-6b8ab2372</div></div>
             <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="https://github.com/Hifza161" target="_blank" class="contact-link">
             <div class="contact-link-icon">🐙</div>
-            <div>
-              <div class="contact-link-label">GitHub</div>
-              <div class="contact-link-val">github.com/Hifza161</div>
-            </div>
+            <div><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/Hifza161</div></div>
             <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -367,10 +319,7 @@
   </div>
 </section>
 
-<footer>
-  <p>Designed & built by <strong>Hifza Rasool</strong> ✦ 2026</p>
-</footer>
-
+<footer><p>Designed & built by <strong>Hifza Rasool</strong> ✦ 2026</p></footer>
 <script src="script.js"></script>
 </body>
 </html>
