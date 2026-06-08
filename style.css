@@ -23,9 +23,9 @@ body::before{content:'';position:fixed;inset:0;z-index:1;
   pointer-events:none;opacity:.5;}
 
 /* ── CURSOR ── */
-.cursor-dot{position:fixed;z-index:9999;width:8px;height:8px;background:var(--cyan);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;box-shadow:0 0 10px var(--cyan),0 0 20px var(--cyan);}
-.cursor-glow{position:fixed;z-index:9998;width:40px;height:40px;border:1px solid rgba(0,212,255,.4);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;}
-@media(hover:none){.cursor-dot,.cursor-glow{display:none;}}
+.cursor-dot{position:fixed;z-index:9999;width:8px;height:8px;transition:width .2s,height .2s,background .2s,opacity .8s;background:var(--cyan);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;box-shadow:0 0 10px var(--cyan),0 0 20px var(--cyan);}
+.cursor-glow{position:fixed;z-index:9998;width:40px;height:40px;border:1px solid rgba(0,212,255,.4);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,opacity .8s;}
+/* @media(hover:none){.cursor-dot,.cursor-glow{display:none;}} */
 
 /* ── PARTICLES ── */
 #particles-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;}

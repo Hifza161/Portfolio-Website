@@ -2,6 +2,25 @@
    HIFZA RASOOL — PORTFOLIO SCRIPTS 2026
 ════════════════════════════════════════════ */
 
+/* ── TOUCH DETECTION — runs first before anything ── */
+const isTouchDevice = () =>
+  window.matchMedia('(hover:none)').matches ||
+  window.matchMedia('(pointer:coarse)').matches ||
+  ('ontouchstart' in window) ||
+  (navigator.maxTouchPoints > 0);
+
+/* ── IMMEDIATELY kill cursor on touch/mobile ── */
+(function(){
+  if(isTouchDevice()){
+    const d = document.getElementById('cursorDot');
+    const g = document.getElementById('cursorGlow');
+    if(d) d.style.cssText = 'display:none!important;opacity:0!important;visibility:hidden!important;';
+    if(g) g.style.cssText = 'display:none!important;opacity:0!important;visibility:hidden!important;';
+    document.documentElement.style.cursor = 'auto';
+    document.body.style.cursor = 'auto';
+  }
+})();
+
 /* ── HAMBURGER MENU ── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
@@ -9,34 +28,67 @@ const navLinks  = document.getElementById('navLinks');
 function closeMenu() {
   if (hamburger) hamburger.classList.remove('open');
   if (navLinks)  navLinks.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 if (hamburger) {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
-  // Close on outside click
   document.addEventListener('click', e => {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
   });
 }
 
-/* ── CURSOR (desktop only) ── */
+/* ── CURSOR — works on both desktop (mouse) and mobile (touch) ── */
 const dot  = document.getElementById('cursorDot');
 const glow = document.getElementById('cursorGlow');
-const isTouchDevice = () => window.matchMedia('(hover:none)').matches;
 
-if (dot && glow && !isTouchDevice()) {
+if (dot && glow) {
   let mx = window.innerWidth/2, my = window.innerHeight/2;
   let gx = mx, gy = my;
 
+  // Make sure cursor elements are visible on all devices
+  dot.style.display  = 'block';
+  glow.style.display = 'block';
+  dot.style.opacity  = '1';
+  glow.style.opacity = '1';
+
+  // ── DESKTOP: mouse tracking ──
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
     dot.style.left = mx + 'px';
     dot.style.top  = my + 'px';
   });
 
+  // ── MOBILE: touch tracking ──
+  document.addEventListener('touchstart', e => {
+    mx = e.touches[0].clientX;
+    my = e.touches[0].clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+    dot.style.opacity = '1';
+    glow.style.opacity = '1';
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    mx = e.touches[0].clientX;
+    my = e.touches[0].clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => {
+    // fade out dot after finger lifts
+    setTimeout(() => {
+      dot.style.opacity  = '0';
+      glow.style.opacity = '0';
+    }, 800);
+  }, { passive: true });
+
+  // hover effects — desktop links
   const hoverEls = document.querySelectorAll('a,button,.skill-icon-card,.project-card');
   hoverEls.forEach(el => {
     el.addEventListener('mouseenter', () => {
@@ -59,6 +111,7 @@ if (dot && glow && !isTouchDevice()) {
     });
   });
 
+  // smooth glow lag animation
   (function animCursor() {
     gx += (mx - gx) * 0.12;
     gy += (my - gy) * 0.12;
@@ -109,7 +162,7 @@ if (canvas) {
     }
   }
 
-  const count = window.innerWidth < 600 ? 60 : 110;
+  const count = window.innerWidth < 600 ? 45 : 110;
   for (let i=0;i<count;i++) pts.push(new P());
 
   (function loop() {
@@ -153,7 +206,6 @@ if (aboutTitleEl) {
     }
     setTimeout(typeAbout, adel ? 35 : 70);
   }
-  // Start when about section is visible
   const aboutObs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) { typeAbout(); aboutObs.disconnect(); }
   },{threshold:.3});
@@ -161,7 +213,7 @@ if (aboutTitleEl) {
   if (aboutSec) aboutObs.observe(aboutSec);
 }
 
-/* ── TAGLINE TYPING ── */
+/* ── TAGLINE TYPING — all devices ── */
 const taglineEl = document.getElementById('taglineText');
 if (taglineEl) {
   const text = 'SE student · problem solver · UI/UX thinker · always learning.';
@@ -172,12 +224,11 @@ if (taglineEl) {
       setTimeout(typeTagline, 55);
     }
   }
-  // start when about section scrolls into view
   const tObs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) { typeTagline(); tObs.disconnect(); }
   }, { threshold: .3 });
-  const aboutSec = document.getElementById('about');
-  if (aboutSec) tObs.observe(aboutSec);
+  const aboutSec2 = document.getElementById('about');
+  if (aboutSec2) tObs.observe(aboutSec2);
 }
 
 /* ── TYPING ANIMATION ── */
@@ -207,19 +258,16 @@ if (typingEl) {
 
 /* ── SCROLL REVEAL ── */
 const reveals = document.querySelectorAll('.reveal');
-new IntersectionObserver((entries) => {
-  entries.forEach((e,i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i*70);
-  });
-},{threshold:.07}).observe
-? (() => {
+if ('IntersectionObserver' in window) {
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e,i) => {
       if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i*70);
     });
   },{threshold:.07});
   reveals.forEach(el => obs.observe(el));
-})() : reveals.forEach(el => el.classList.add('visible'));
+} else {
+  reveals.forEach(el => el.classList.add('visible'));
+}
 
 /* ── SKILL BARS ── */
 const bars = document.querySelectorAll('.skill-bar-fill');
