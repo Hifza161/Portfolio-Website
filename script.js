@@ -162,7 +162,7 @@ if (canvas) {
     }
   }
 
-  const count = window.innerWidth < 600 ? 45 : 110;
+  const count = window.innerWidth < 480 ? 20 : window.innerWidth < 768 ? 45 : 110;
   for (let i=0;i<count;i++) pts.push(new P());
 
   (function loop() {
@@ -216,7 +216,7 @@ if (aboutTitleEl) {
 /* ── TAGLINE TYPING — all devices ── */
 const taglineEl = document.getElementById('taglineText');
 if (taglineEl) {
-  const text = 'SE student · problem solver · UI/UX thinker · always learning.';
+  const text = 'SE student · Android developer · UI/UX thinker · problem solver.';
   let i = 0;
   function typeTagline() {
     if (i <= text.length) {

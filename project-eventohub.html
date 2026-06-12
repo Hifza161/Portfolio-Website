@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>EventoHub | Hifza Rasool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<canvas id="particles-canvas"></canvas>
+<div class="lightning-bg"><div class="lightning-orb orb-1"></div><div class="lightning-orb orb-2"></div></div>
+
+<nav id="navbar">
+  <div class="nav-logo">Hifza Rasool<span>.</span></div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="index.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="index.html#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="index.html#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <span class="project-hero-emoji">📱</span>
+    <div class="project-type">Android App · Featured Project</div>
+    <h1 class="project-title-big">EventoHub</h1>
+    <p class="project-summary">A full-stack Android application for end-to-end event management — from creation and discovery to user coordination and real-time notifications.</p>
+    <div class="project-meta">
+      <div class="meta-item"><label>Platform</label><span>Android</span></div>
+      <div class="meta-item"><label>Language</label><span>Kotlin</span></div>
+      <div class="meta-item"><label>Backend</label><span>Firebase</span></div>
+      <div class="meta-item"><label>Type</label><span>Full-Stack</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="project-content">
+  <div class="content-section">
+    <h2>Overview</h2>
+    <p>EventoHub solves a real problem — organizing and attending events is fragmented across multiple apps. EventoHub consolidates event creation, discovery, RSVP management, and notifications into one clean Android experience.</p>
+    <p>Built with Kotlin and powered by Firebase, it delivers real-time data sync so organizers and attendees always see the latest event updates instantly.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>Key Features</h2>
+    <ul class="feature-list">
+      <li>Event creation with title, description, date, location, and capacity limit</li>
+      <li>User authentication and role management (Organizer / Attendee)</li>
+      <li>Real-time push notifications for event updates and reminders</li>
+      <li>RSVP system with live attendee count tracking</li>
+      <li>Firebase Firestore for real-time database sync</li>
+      <li>Clean Material Design UI with smooth navigation</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+      <span class="tech-pill">Kotlin</span>
+      <span class="tech-pill">Android Studio</span>
+      <span class="tech-pill">Firebase Firestore</span>
+      <span class="tech-pill">Firebase Auth</span>
+      <span class="tech-pill">FCM Notifications</span>
+      <span class="tech-pill">Material Design</span>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>What I Learned</h2>
+    <p>This project taught me how to architect a real-time Android app from scratch — handling authentication flows, Firestore data modelling, and Firebase Cloud Messaging for push notifications. It strengthened my understanding of MVVM patterns and asynchronous data handling in Kotlin.</p>
+  </div>
+
+  <div class="cta-row">
+    <a href="index.html#projects" class="btn-primary nav-back">← Back to Projects</a>
+  </div>
+</div>
+
+<footer><p>Designed & built by <strong>Hifza Rasool</strong> ✦ 2026</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

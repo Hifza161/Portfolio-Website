@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Hifza Rasool | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
@@ -37,7 +37,6 @@
 <section id="home">
   <div class="hero-bg-name" aria-hidden="true">HIFZA</div>
   <div class="hero-aura"></div>
-
   <div class="hero-img-side">
     <div class="img-ring img-ring-1"></div>
     <div class="img-ring img-ring-2"></div>
@@ -47,11 +46,10 @@
     <div class="float-badge badge-cpp">⚙️ C++</div>
     <div class="float-badge badge-vs">💻 VS-Code</div>
     <div class="img-frame">
-      <img src="images/profile_pic.png" alt="Hifza Rasool" class="hero-photo" id="heroPhoto"/>
+      <img src="images/profile_pic.png" alt="Hifza Rasool" class="hero-photo" id="heroPhoto" loading="eager"/>
       <div class="img-overlay-glow"></div>
     </div>
   </div>
-
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>scroll</span>
@@ -69,17 +67,22 @@
           <span class="gradient-text neon-heading">functional & attractive.</span>
         </h2>
         <p class="about-tagline">
-  <span class="tagline-animate" id="taglineText"></span><span class="tagline-cursor">|</span><br>
-  <span class="tagline-sub">Turning ideas into scalable, user-friendly applications through code, creativity, and a commitment to continuous growth.</span>
-</p>
+          <span class="tagline-animate" id="taglineText"></span><span class="tagline-cursor">|</span><br>
+          <span class="tagline-sub">I enjoy designing and developing applications that combine clean interfaces with practical solutions — turning ideas into software that actually works.</span>
+        </p>
+        <!-- Resume Download Button -->
+        <a href="resume.pdf" download class="btn-resume">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
       </div>
       <div class="about-stats">
         <div class="stat-card reveal">
-          <div class="stat-num">3+</div>
+          <div class="stat-num">6+</div>
           <div class="stat-label">Projects Completed</div>
         </div>
         <div class="stat-card reveal">
-          <div class="stat-num">6+</div>
+          <div class="stat-num">8+</div>
           <div class="stat-label">Technologies</div>
         </div>
         <div class="stat-card reveal">
@@ -101,6 +104,7 @@
     <div class="projects-header reveal">
       <div class="section-label">Work</div>
       <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+      <p class="projects-subtitle">Swipe or tap arrows to explore</p>
     </div>
   </div>
 
@@ -110,64 +114,101 @@
     </button>
     <div class="projects-scroll-track" id="projectsTrack">
 
-      <a href="project-travel.html" class="project-card reveal">
+      <!-- FEATURED: EventoHub -->
+      <a href="project-eventohub.html" class="project-card project-featured reveal">
         <div class="card-neon-border"></div>
         <div class="card-inner-glow"></div>
+        <div class="project-badge">⭐ Featured</div>
         <div class="project-number">01</div>
+        <div class="project-icon">📱</div>
+        <div class="project-title">EventoHub</div>
+        <p class="project-tagline">Event Management Android App</p>
+        <p class="project-desc">Full-stack Android app for event creation, user management, and real-time notifications — built with Firebase backend.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ Event creation</span>
+          <span class="feature-item">✓ User management</span>
+          <span class="feature-item">✓ Notifications</span>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Android Studio</span>
+          <span class="tag">Firebase</span>
+        </div>
+        <div class="project-link">View Case Study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="project-travel.html" class="project-card reveal">
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
+        <div class="project-number">02</div>
         <div class="project-icon">✈️</div>
-        <div class="project-title">Travel App (UX/UI)</div>
-        <p class="project-desc">Smart travel planning app in Figma with itinerary planning, budget tracking, and safety tools.</p>
-        <div class="project-tags"><span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Design</span></div>
+        <div class="project-title">Travel App</div>
+        <p class="project-tagline">UX/UI Design · Figma</p>
+        <p class="project-desc">Designed a smart travel planning app with itinerary planning, budget tracking, and safety tools.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ Itinerary planning</span>
+          <span class="feature-item">✓ Budget tracker</span>
+        </div>
+        <div class="project-tags"><span class="tag">Figma</span><span class="tag">UX/UI</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="complaint-management-project.html" class="project-card reveal">
         <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">02</div>
-        <div class="project-icon">🏢</div>
-        <div class="project-title">Complaint Management System</div>
-        <p class="project-desc">SRE group project with AI-based complaint categorization and role-based workflow system.</p>
-        <div class="project-tags"><span class="tag">SRE</span><span class="tag">Figma</span><span class="tag">System Design</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a href="project-calculator.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
         <div class="project-number">03</div>
-        <div class="project-icon">⚙️</div>
-        <div class="project-title">Neon Calculator</div>
-        <p class="project-desc">Neon calculator with interactive light and dark modes and vivid glowing colors.</p>
-        <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a href="tic-tac-toe.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">04</div>
-        <div class="project-icon">🎮</div>
-        <div class="project-title">Tic Tac Toe</div>
-        <p class="project-desc">Modern browser game with smooth gameplay, winner detection, and interactive animations.</p>
-        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a href="stone-paper-scissors.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">05</div>
-        <div class="project-icon">🪨</div>
-        <div class="project-title">Stone Paper Scissors</div>
-        <p class="project-desc">Fun interactive browser game with score tracking and smooth UI animations.</p>
-        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        <div class="project-icon">🏢</div>
+        <div class="project-title">Complaint Management</div>
+        <p class="project-tagline">System Design · SRE</p>
+        <p class="project-desc">AI-based complaint categorization with role-based workflow and automated routing.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ AI categorization</span>
+          <span class="feature-item">✓ Role-based access</span>
+        </div>
+        <div class="project-tags"><span class="tag">SRE</span><span class="tag">Figma</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
       <a href="project-ai.html" class="project-card reveal">
         <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">06</div>
+        <div class="project-number">04</div>
         <div class="project-icon">🤖</div>
         <div class="project-title">AI Lab Project</div>
-        <p class="project-desc">A* and GBFS search algorithms to solve pathfinding problems efficiently in Python.</p>
-        <div class="project-tags"><span class="tag">Python</span><span class="tag">A* Search</span><span class="tag">AI</span></div>
+        <p class="project-tagline">Pathfinding Algorithms · Python</p>
+        <p class="project-desc">Implemented A* and GBFS search algorithms to solve pathfinding problems efficiently.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ A* Search</span>
+          <span class="feature-item">✓ GBFS Algorithm</span>
+        </div>
+        <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
+        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="project-calculator.html" class="project-card reveal">
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
+        <div class="project-number">05</div>
+        <div class="project-icon">⚙️</div>
+        <div class="project-title">Neon Calculator</div>
+        <p class="project-tagline">Web App · JavaScript</p>
+        <p class="project-desc">Interactive calculator with light/dark neon modes and smooth animations.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ Light/Dark mode</span>
+          <span class="feature-item">✓ Neon animations</span>
+        </div>
+        <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JS</span></div>
+        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="tic-tac-toe.html" class="project-card reveal">
+        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
+        <div class="project-number">06</div>
+        <div class="project-icon">🎮</div>
+        <div class="project-title">Tic Tac Toe</div>
+        <p class="project-tagline">Browser Game · JavaScript</p>
+        <p class="project-desc">Modern browser game with winner detection and smooth interactive animations.</p>
+        <div class="project-features">
+          <span class="feature-item">✓ Win detection</span>
+          <span class="feature-item">✓ Score tracking</span>
+        </div>
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
         <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
@@ -185,103 +226,43 @@
       <div class="section-label">Expertise</div>
       <h2 class="section-title">Skills & <span class="gradient-text">Tools</span></h2>
     </div>
-
     <div class="skills-icons-row reveal">
-      <div class="skill-icon-card" style="--d:0s">
-        <div class="skill-icon-emoji">🖥️</div>
-        <div class="skill-icon-label">C / C++</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.15s">
-        <div class="skill-icon-emoji">🐍</div>
-        <div class="skill-icon-label">Python</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.3s">
-        <div class="skill-icon-emoji">⚡</div>
-        <div class="skill-icon-label">JavaScript</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.45s">
-        <div class="skill-icon-emoji">🌐</div>
-        <div class="skill-icon-label">HTML/CSS</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.6s">
-        <div class="skill-icon-emoji">🎨</div>
-        <div class="skill-icon-label">Figma</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.75s">
-        <div class="skill-icon-emoji">🔧</div>
-        <div class="skill-icon-label">Git</div>
-      </div>
-      <div class="skill-icon-card" style="--d:0.9s">
-        <div class="skill-icon-emoji">💻</div>
-        <div class="skill-icon-label">VS Code</div>
-      </div>
-      <div class="skill-icon-card" style="--d:1.05s">
-        <div class="skill-icon-emoji">📊</div>
-        <div class="skill-icon-label">NumPy</div>
-      </div>
+      <div class="skill-icon-card" style="--d:0s"><div class="skill-icon-emoji">🖥️</div><div class="skill-icon-label">C / C++</div></div>
+      <div class="skill-icon-card" style="--d:0.15s"><div class="skill-icon-emoji">🐍</div><div class="skill-icon-label">Python</div></div>
+      <div class="skill-icon-card" style="--d:0.3s"><div class="skill-icon-emoji">⚡</div><div class="skill-icon-label">JavaScript</div></div>
+      <div class="skill-icon-card" style="--d:0.45s"><div class="skill-icon-emoji">🌐</div><div class="skill-icon-label">HTML/CSS</div></div>
+      <div class="skill-icon-card" style="--d:0.6s"><div class="skill-icon-emoji">🎨</div><div class="skill-icon-label">Figma</div></div>
+      <div class="skill-icon-card" style="--d:0.75s"><div class="skill-icon-emoji">🔧</div><div class="skill-icon-label">Git</div></div>
+      <div class="skill-icon-card" style="--d:0.9s"><div class="skill-icon-emoji">💻</div><div class="skill-icon-label">VS Code</div></div>
+      <div class="skill-icon-card" style="--d:1.05s"><div class="skill-icon-emoji">📱</div><div class="skill-icon-label">Android</div></div>
     </div>
-
     <div class="skills-grid">
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
         <div class="skill-category"><span>🖥</span> Languages</div>
         <div class="skill-bars">
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>C / C++</span><span class="skill-pct">82%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="82"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Python</span><span class="skill-pct">78%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="78"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>JavaScript</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Assembly</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="55"></div></div>
-          </div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>C / C++</span><span class="skill-pct">82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="82"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Python</span><span class="skill-pct">78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="78"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>JavaScript</span><span class="skill-pct">70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Kotlin</span><span class="skill-pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="65"></div></div></div>
         </div>
       </div>
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
-        <div class="skill-category"><span>🌐</span> Frontend</div>
+        <div class="skill-category"><span>🌐</span> Frontend & Mobile</div>
         <div class="skill-bars">
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>HTML5</span><span class="skill-pct">90%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>CSS3</span><span class="skill-pct">85%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="85"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>JavaScript</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div>
-          </div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>HTML5 / CSS3</span><span class="skill-pct">88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Android Studio</span><span class="skill-pct">70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Firebase</span><span class="skill-pct">68%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="68"></div></div></div>
         </div>
       </div>
       <div class="skill-card tilt-card reveal">
         <div class="skill-card-glow"></div>
         <div class="skill-category"><span>🛠</span> Tools</div>
         <div class="skill-bars">
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Figma</span><span class="skill-pct">80%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="80"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>Git</span><span class="skill-pct">72%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="72"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>VS Code</span><span class="skill-pct">88%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-label"><span>NumPy / Canva</span><span class="skill-pct">65%</span></div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-w="65"></div></div>
-          </div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Figma</span><span class="skill-pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="80"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>Git / GitHub</span><span class="skill-pct">75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-bar-item"><div class="skill-bar-label"><span>VS Code</span><span class="skill-pct">88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="88"></div></div></div>
         </div>
       </div>
     </div>
@@ -311,6 +292,11 @@
             <div class="contact-link-icon">🐙</div>
             <div><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/Hifza161</div></div>
             <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="resume.pdf" download class="contact-link">
+            <div class="contact-link-icon">📄</div>
+            <div><div class="contact-link-label">Resume</div><div class="contact-link-val">Download PDF</div></div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </a>
         </div>
       </div>

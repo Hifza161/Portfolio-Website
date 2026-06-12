@@ -545,3 +545,168 @@ footer strong{color:var(--cyan);}
   .cta-row{flex-direction:column;}
   .project-meta{gap:1.2rem;}
 }
+
+/* ════════════════════════════════════════════
+   ADDITIONS & MOBILE FIXES v4
+════════════════════════════════════════════ */
+
+/* ── RESUME BUTTON ── */
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.5rem;
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: .88rem;
+  padding: .75rem 1.6rem;
+  border-radius: 10px;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 0 20px rgba(0,212,255,.2);
+  width: fit-content;
+}
+.btn-resume:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,212,255,.35);
+}
+
+/* ── PROJECT CARD CASE STUDY UPGRADES ── */
+.project-tagline {
+  font-size: .72rem;
+  color: var(--cyan);
+  font-weight: 500;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
+  opacity: .8;
+}
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: .22rem;
+  margin-bottom: 1rem;
+}
+.feature-item {
+  font-size: .74rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.project-badge {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: linear-gradient(135deg,rgba(0,212,255,.15),rgba(168,85,247,.15));
+  border: 1px solid rgba(168,85,247,.3);
+  color: var(--purple);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: .2rem .6rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+.project-featured {
+  border-color: rgba(168,85,247,.25) !important;
+  background: rgba(14,10,30,.9) !important;
+}
+
+/* ── MOBILE GLOBAL FIXES ── */
+@media(max-width:768px) {
+
+  /* prevent ALL text overflow */
+  * { word-break: break-word; }
+  .contact-link-val { font-size: .78rem; word-break: break-all; }
+
+  /* about section stacked */
+  .about-tagline { letter-spacing: 0; }
+  .tagline-sub { font-size: .82rem; }
+
+  /* resume button full width on mobile */
+  .btn-resume { width: 100%; justify-content: center; font-size: .84rem; padding: .7rem 1rem; }
+
+  /* nav hamburger full-screen overlay */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(4,5,15,.97);
+    backdrop-filter: blur(24px);
+    z-index: 249;
+    padding: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border: none; width: 100%; text-align: center; }
+  .nav-links a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    display: block;
+    border: none;
+    color: var(--muted);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+
+  /* badges — all visible, tucked close */
+  .float-badge { font-size: .58rem; padding: .2rem .52rem; }
+  .badge-figma  { display: flex; top: 3%;    left: -34px; }
+  .badge-python { display: flex; bottom: 25%; left: -36px; }
+  .badge-js     { display: flex; top: 13%;   right: -20px; }
+  .badge-cpp    { display: flex; bottom: 5%;  right: -14px; }
+  .badge-vs     { display: none; }
+
+  /* project cards — no text overflow */
+  .project-card { flex: 0 0 82vw; max-width: 320px; padding: 1.3rem 1.2rem; }
+  .project-title { font-size: .95rem; }
+  .project-desc { font-size: .8rem; }
+  .feature-item { font-size: .72rem; }
+
+  /* skills grid */
+  .skills-grid { grid-template-columns: 1fr; }
+  .skills-icons-row { gap: .55rem; }
+  .skill-icon-card { min-width: 60px; padding: .65rem .5rem; }
+  .skill-icon-emoji { font-size: 1.25rem; }
+  .skill-icon-label { font-size: .6rem; }
+
+  /* about stats */
+  .about-stats { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .stat-card { padding: 1.2rem .9rem; }
+  .stat-num { font-size: 1.8rem; }
+  .stat-label { font-size: .7rem; }
+
+  /* contact */
+  .contact-link { gap: .6rem; padding: 1rem 1rem; }
+  .contact-link-icon { font-size: 1.1rem; }
+
+  /* DISABLE heavy animations on mobile for performance */
+  .about-heading { animation: none; }
+  .about-tagline { animation: none; }
+  .lightning-orb { animation: none !important; opacity: .08; }
+  body::before { display: none; } /* remove grain — heavy on mobile */
+  .img-ring-2 { display: none; } /* remove outer ring */
+
+  /* reduce particle count handled in JS */
+}
+
+@media(max-width:400px) {
+  .hero-bg-name { font-size: clamp(3rem,24vw,5rem); letter-spacing: 2px; }
+  .badge-python { display: none; }
+  .badge-cpp    { display: none; }
+  .badge-figma  { left: -28px; }
+  .badge-js     { right: -16px; }
+  .project-card { flex: 0 0 88vw; }
+  .btn-resume   { font-size: .8rem; }
+}
+
+/* project page mobile */
+@media(max-width:600px) {
+  .project-hero { min-height: auto; padding: 6rem 1.2rem 2.5rem; }
+  .project-title-big { font-size: clamp(1.6rem,7vw,2.4rem); letter-spacing: -1px; }
+  .project-meta { gap: .7rem; }
+  .meta-item { padding: .5rem .8rem; }
+  .project-content { padding: 2.5rem 1.2rem; }
+  .preview-img { width: 100%; height: 180px; }
+  .cta-row { flex-direction: column; }
+}
