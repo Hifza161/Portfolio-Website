@@ -98,124 +98,299 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS — Alternating layout -->
 <section id="projects">
   <div class="section-inner">
     <div class="projects-header reveal">
       <div class="section-label">Work</div>
       <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
-      <p class="projects-subtitle">Swipe or tap arrows to explore</p>
     </div>
-  </div>
 
-  <div class="scroll-track-wrapper">
-    <button class="scroll-arrow arrow-left" id="arrowLeft" aria-label="Scroll left">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    </button>
-    <div class="projects-scroll-track" id="projectsTrack">
+    <div class="projects-alt-list">
 
-      <!-- FEATURED: EventoHub -->
-      <a href="project-eventohub.html" class="project-card project-featured reveal">
-        <div class="card-neon-border"></div>
-        <div class="card-inner-glow"></div>
-        <div class="project-badge">⭐ Featured</div>
-        <div class="project-number">01</div>
-        <div class="project-icon">📱</div>
-        <div class="project-title">EventoHub</div>
-        <p class="project-tagline">Event Management Android App</p>
-        <p class="project-desc">Full-stack Android app for event creation, user management, and real-time notifications — built with Firebase backend.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ Event creation</span>
-          <span class="feature-item">✓ User management</span>
-          <span class="feature-item">✓ Notifications</span>
+      <!-- 01 — image right -->
+      <div class="proj-row reveal">
+        <div class="proj-info">
+          <div class="proj-meta-top">
+            <span class="proj-num">01</span>
+            <span class="proj-badge-feat">⭐ Featured</span>
+          </div>
+          <div class="proj-icon-lg">📱</div>
+          <h3 class="proj-title">EventoHub</h3>
+          <p class="proj-sub">Event Management Android App</p>
+          <p class="proj-desc">Full-stack Android app for event creation, user management, and real-time notifications — built with Firebase backend.</p>
+          <div class="proj-feats">
+            <span>✓ Event creation</span>
+            <span>✓ User management</span>
+            <span>✓ Push notifications</span>
+          </div>
+          <div class="proj-tags-row">
+            <span class="tag">Kotlin</span><span class="tag">Android Studio</span><span class="tag">Firebase</span>
+          </div>
+          <div class="proj-cta-group">
+  <a href="project-eventohub.html" class="proj-cta">View Case Study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  <span class="badge-coming-soon">🚀 App Coming Soon</span>
+</div>
         </div>
-        <div class="project-tags">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Android Studio</span>
-          <span class="tag">Firebase</span>
+        <div class="proj-visual proj-visual-glow">
+          <div class="proj-video-wrap">
+            <div class="video-phone-frame">
+              <div class="video-phone-notch"></div>
+              <div class="video-phone-screen">
+                <!-- ↓ Replace this src with your actual video file path e.g. videos/eventohub-demo.mp4 -->
+                <!-- Fallback placeholder (hidden once video loads) -->
+                <div class="video-placeholder" id="videoPlaceholder">
+                  <div class="vp-icon">📱</div>
+                  <div class="vp-title">EventoHub</div>
+                  <div class="vp-badge">Loading...</div>
+                  <div class="vp-sub">App preview video</div>
+                  <div class="vp-pulse"></div>
+                </div>
+                <video
+                  id="eventoVideo"
+                  class="eventohub-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  style="display:none;"
+                >
+                  <source src="videos/eventohub-demo.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="video-phone-home"></div>
+            </div>
+            <div class="video-glow-ring"></div>
+          </div>
         </div>
-        <div class="project-link">View Case Study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+      </div>
 
-      <a href="project-travel.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">02</div>
-        <div class="project-icon">✈️</div>
-        <div class="project-title">Travel App</div>
-        <p class="project-tagline">UX/UI Design · Figma</p>
-        <p class="project-desc">Designed a smart travel planning app with itinerary planning, budget tracking, and safety tools.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ Itinerary planning</span>
-          <span class="feature-item">✓ Budget tracker</span>
+      <!-- 02 — image left -->
+      <div class="proj-row proj-row-rev reveal">
+        <div class="proj-info">
+          <div class="proj-meta-top"><span class="proj-num">02</span></div>
+          <div class="proj-icon-lg">✈️</div>
+          <h3 class="proj-title">Travel App</h3>
+          <p class="proj-sub">UX/UI Design · Figma</p>
+          <p class="proj-desc">Designed a smart travel planning app with itinerary planning, budget tracking, and built-in safety tools.</p>
+          <div class="proj-feats">
+            <span>✓ Itinerary planning</span>
+            <span>✓ Budget tracker</span>
+            <span>✓ Safety tools</span>
+          </div>
+          <div class="proj-tags-row">
+            <span class="tag">Figma</span><span class="tag">UX/UI</span><span class="tag">Design</span>
+          </div>
+          <a href="project-travel.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <div class="project-tags"><span class="tag">Figma</span><span class="tag">UX/UI</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+        <div class="proj-visual">
+          <div class="proj-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-topbar"><span></span><span></span><span></span></div>
+              <div class="mockup-body">
+                <div class="mock-label">✈️ Trip Planner</div>
+                <div class="mock-card"><div class="mock-title">Paris · 5 Days</div><div class="mock-detail">Budget: $1,200 remaining</div></div>
+                <div class="mock-card"><div class="mock-title">Day 2 Itinerary</div><div class="mock-detail">3 activities planned</div></div>
+                <div class="mock-stat-row"><div class="mock-stat"><div class="mock-stat-n">8</div><div class="mock-stat-l">Places</div></div><div class="mock-stat"><div class="mock-stat-n">5</div><div class="mock-stat-l">Days</div></div><div class="mock-stat"><div class="mock-stat-n">✓</div><div class="mock-stat-l">Safe</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <a href="complaint-management-project.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">03</div>
-        <div class="project-icon">🏢</div>
-        <div class="project-title">Complaint Management</div>
-        <p class="project-tagline">System Design · SRE</p>
-        <p class="project-desc">AI-based complaint categorization with role-based workflow and automated routing.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ AI categorization</span>
-          <span class="feature-item">✓ Role-based access</span>
+      <!-- 03 — image right -->
+      <div class="proj-row reveal">
+        <div class="proj-info">
+          <div class="proj-meta-top"><span class="proj-num">03</span></div>
+          <div class="proj-icon-lg">🏢</div>
+          <h3 class="proj-title">Complaint Management</h3>
+          <p class="proj-sub">System Design · SRE</p>
+          <p class="proj-desc">AI-based complaint categorization system with role-based workflow and automated routing for efficient resolution.</p>
+          <div class="proj-feats">
+            <span>✓ AI categorization</span>
+            <span>✓ Role-based access</span>
+            <span>✓ Auto routing</span>
+          </div>
+          <div class="proj-tags-row">
+            <span class="tag">SRE</span><span class="tag">Figma</span><span class="tag">System Design</span>
+          </div>
+          <a href="complaint-management-project.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <div class="project-tags"><span class="tag">SRE</span><span class="tag">Figma</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+        <div class="proj-visual">
+          <div class="proj-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-topbar"><span></span><span></span><span></span></div>
+              <div class="mockup-body">
+                <div class="mock-label">🏢 CMS Dashboard</div>
+                <div class="mock-card"><div class="mock-title">Complaint #1042</div><div class="mock-detail">Auto-routed · High Priority</div></div>
+                <div class="mock-card"><div class="mock-title">AI Category: Billing</div><div class="mock-detail">Assigned to Finance Team</div></div>
+                <div class="mock-stat-row"><div class="mock-stat"><div class="mock-stat-n">94%</div><div class="mock-stat-l">Accuracy</div></div><div class="mock-stat"><div class="mock-stat-n">2h</div><div class="mock-stat-l">Avg. Time</div></div><div class="mock-stat"><div class="mock-stat-n">3</div><div class="mock-stat-l">Roles</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <a href="project-ai.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">04</div>
-        <div class="project-icon">🤖</div>
-        <div class="project-title">AI Lab Project</div>
-        <p class="project-tagline">Pathfinding Algorithms · Python</p>
-        <p class="project-desc">Implemented A* and GBFS search algorithms to solve pathfinding problems efficiently.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ A* Search</span>
-          <span class="feature-item">✓ GBFS Algorithm</span>
+      <!-- 04 — image left -->
+      <div class="proj-row proj-row-rev reveal">
+        <div class="proj-info">
+          <div class="proj-meta-top"><span class="proj-num">04</span></div>
+          <div class="proj-icon-lg">🤖</div>
+          <h3 class="proj-title">AI Lab Project</h3>
+          <p class="proj-sub">Pathfinding Algorithms · Python</p>
+          <p class="proj-desc">Implemented A* and GBFS search algorithms to efficiently solve pathfinding problems with visual step-by-step output.</p>
+          <div class="proj-feats">
+            <span>✓ A* Search</span>
+            <span>✓ GBFS Algorithm</span>
+            <span>✓ Visual output</span>
+          </div>
+          <div class="proj-tags-row">
+            <span class="tag">Python</span><span class="tag">AI</span><span class="tag">Algorithms</span>
+          </div>
+          <a href="project-ai.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <div class="project-tags"><span class="tag">Python</span><span class="tag">AI</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+        <div class="proj-visual">
+          <div class="proj-mockup">
+            <div class="mockup-screen">
+              <div class="mockup-topbar"><span></span><span></span><span></span></div>
+              <div class="mockup-body">
+                <div class="mock-label">🤖 Pathfinder</div>
+                <div class="mock-card"><div class="mock-title">A* Algorithm</div><div class="mock-detail">Path found · 12 steps</div></div>
+                <div class="mock-card"><div class="mock-title">GBFS Algorithm</div><div class="mock-detail">Heuristic: Manhattan dist.</div></div>
+                <div class="mock-stat-row"><div class="mock-stat"><div class="mock-stat-n">A*</div><div class="mock-stat-l">Optimal</div></div><div class="mock-stat"><div class="mock-stat-n">GBFS</div><div class="mock-stat-l">Fast</div></div><div class="mock-stat"><div class="mock-stat-n">✓</div><div class="mock-stat-l">Visual</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <a href="project-calculator.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">05</div>
-        <div class="project-icon">⚙️</div>
-        <div class="project-title">Neon Calculator</div>
-        <p class="project-tagline">Web App · JavaScript</p>
-        <p class="project-desc">Interactive calculator with light/dark neon modes and smooth animations.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ Light/Dark mode</span>
-          <span class="feature-item">✓ Neon animations</span>
-        </div>
-        <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JS</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+      <!-- VIEW ALL BUTTON -->
+      <div class="view-all-wrap">
+        <button class="btn-view-all" id="btnViewAll" onclick="toggleMoreProjects()">
+          <span id="btnViewAllText">View All Projects</span>
+          <svg id="btnViewAllIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
 
-      <a href="tic-tac-toe.html" class="project-card reveal">
-        <div class="card-neon-border"></div><div class="card-inner-glow"></div>
-        <div class="project-number">06</div>
-        <div class="project-icon">🎮</div>
-        <div class="project-title">Tic Tac Toe</div>
-        <p class="project-tagline">Browser Game · JavaScript</p>
-        <p class="project-desc">Modern browser game with winner detection and smooth interactive animations.</p>
-        <div class="project-features">
-          <span class="feature-item">✓ Win detection</span>
-          <span class="feature-item">✓ Score tracking</span>
+      <!-- HIDDEN: more projects (shown on click) -->
+      <div class="more-projects-wrap" id="moreProjects">
+
+        <!-- 05 — image right -->
+        <div class="proj-row reveal-more">
+          <div class="proj-info">
+            <div class="proj-meta-top"><span class="proj-num">05</span></div>
+            <div class="proj-icon-lg">⚙️</div>
+            <h3 class="proj-title">Neon Calculator</h3>
+            <p class="proj-sub">Web App · JavaScript</p>
+            <p class="proj-desc">Interactive calculator with light and dark neon modes, smooth button animations, and full keyboard support.</p>
+            <div class="proj-feats">
+              <span>✓ Light / Dark neon mode</span>
+              <span>✓ Smooth animations</span>
+              <span>✓ Keyboard support</span>
+            </div>
+            <div class="proj-tags-row"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+            <a href="project-calculator.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="proj-visual">
+            <div class="proj-mockup">
+              <div class="mockup-screen">
+                <div class="mockup-topbar"><span></span><span></span><span></span></div>
+                <div class="mockup-body">
+                  <div class="mock-label">⚙️ Neon Calculator</div>
+                  <div class="mock-card"><div class="mock-title">Expression: 24 × 7</div><div class="mock-detail">Result: 168</div></div>
+                  <div class="mock-card"><div class="mock-title">Theme: Dark Neon</div><div class="mock-detail">Cyan + Purple glow active</div></div>
+                  <div class="mock-stat-row">
+                    <div class="mock-stat"><div class="mock-stat-n">2</div><div class="mock-stat-l">Themes</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">JS</div><div class="mock-stat-l">Pure</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">⌨</div><div class="mock-stat-l">Keys</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-        <div class="project-link">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+
+        <!-- 06 — image left -->
+        <div class="proj-row proj-row-rev reveal-more">
+          <div class="proj-info">
+            <div class="proj-meta-top"><span class="proj-num">06</span></div>
+            <div class="proj-icon-lg">🎮</div>
+            <h3 class="proj-title">Tic Tac Toe</h3>
+            <p class="proj-sub">Browser Game · JavaScript</p>
+            <p class="proj-desc">Modern browser-based Tic Tac Toe with winner detection, score tracking, and smooth animations.</p>
+            <div class="proj-feats">
+              <span>✓ Winner detection</span>
+              <span>✓ Score tracking</span>
+              <span>✓ Smooth animations</span>
+            </div>
+            <div class="proj-tags-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <a href="tic-tac-toe.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="proj-visual">
+            <div class="proj-mockup">
+              <div class="mockup-screen">
+                <div class="mockup-topbar"><span></span><span></span><span></span></div>
+                <div class="mockup-body">
+                  <div class="mock-label">🎮 Tic Tac Toe</div>
+                  <div class="mock-card"><div class="mock-title">Player X wins! 🎉</div><div class="mock-detail">Diagonal line detected</div></div>
+                  <div class="mock-card"><div class="mock-title">Score Board</div><div class="mock-detail">X: 3 wins · O: 2 wins</div></div>
+                  <div class="mock-stat-row">
+                    <div class="mock-stat"><div class="mock-stat-n">2P</div><div class="mock-stat-l">Players</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">✓</div><div class="mock-stat-l">Detect</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">∞</div><div class="mock-stat-l">Replay</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 — image right -->
+        <div class="proj-row reveal-more">
+          <div class="proj-info">
+            <div class="proj-meta-top"><span class="proj-num">07</span></div>
+            <div class="proj-icon-lg">🪨</div>
+            <h3 class="proj-title">Stone Paper Scissors</h3>
+            <p class="proj-sub">Browser Game · JavaScript</p>
+            <p class="proj-desc">Fun interactive browser game against the computer with live score tracking and animated results.</p>
+            <div class="proj-feats">
+              <span>✓ vs Computer AI</span>
+              <span>✓ Live score tracking</span>
+              <span>✓ Animated results</span>
+            </div>
+            <div class="proj-tags-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <a href="stone-paper-scissors.html" class="proj-cta">View Project <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="proj-visual">
+            <div class="proj-mockup">
+              <div class="mockup-screen">
+                <div class="mockup-topbar"><span></span><span></span><span></span></div>
+                <div class="mockup-body">
+                  <div class="mock-label">🪨 Stone Paper Scissors</div>
+                  <div class="mock-card"><div class="mock-title">You chose: ✂️ Scissors</div><div class="mock-detail">CPU chose: 🪨 Stone · You lose!</div></div>
+                  <div class="mock-card"><div class="mock-title">Score</div><div class="mock-detail">You: 4 · CPU: 3 · Ties: 1</div></div>
+                  <div class="mock-stat-row">
+                    <div class="mock-stat"><div class="mock-stat-n">3</div><div class="mock-stat-l">Choices</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">AI</div><div class="mock-stat-l">vs CPU</div></div>
+                    <div class="mock-stat"><div class="mock-stat-n">∞</div><div class="mock-stat-l">Rounds</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collapse button -->
+        <div class="view-all-wrap">
+          <button class="btn-view-all btn-collapse" onclick="toggleMoreProjects()">
+            Show Less
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+          </button>
+        </div>
+
+      </div>
 
     </div>
-    <button class="scroll-arrow arrow-right" id="arrowRight" aria-label="Scroll right">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </button>
   </div>
 </section>
 

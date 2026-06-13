@@ -309,36 +309,66 @@ if (!isTouchDevice()) {
   });
 }
 
-/* ── HORIZONTAL SCROLL ── */
-const track = document.getElementById('projectsTrack');
-const aL    = document.getElementById('arrowLeft');
-const aR    = document.getElementById('arrowRight');
-if (track) {
-  const amt = 370;
-  aL?.addEventListener('click', () => track.scrollBy({left:-amt,behavior:'smooth'}));
-  aR?.addEventListener('click', () => track.scrollBy({left:amt, behavior:'smooth'}));
-
-  // Mouse drag
-  let down=false, startX, sL;
-  track.addEventListener('mousedown', e => {
-    down=true; track.classList.add('grabbing');
-    startX=e.pageX-track.offsetLeft; sL=track.scrollLeft;
-  });
-  ['mouseleave','mouseup'].forEach(ev=>track.addEventListener(ev,()=>{down=false;track.classList.remove('grabbing');}));
-  track.addEventListener('mousemove', e => {
-    if (!down) return;
-    e.preventDefault();
-    track.scrollLeft = sL - (e.pageX-track.offsetLeft-startX)*1.5;
-  });
-
-  // Touch swipe
-  let tx=0;
-  track.addEventListener('touchstart', e => {tx=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchmove',  e => {
-    track.scrollLeft -= (e.touches[0].clientX - tx)*1.2;
-    tx=e.touches[0].clientX;
-  },{passive:true});
-}
+/* ── HORIZONTAL SCROLL removed — now using alternating vertical layout ── */
 
 /* helper exposed to onclick= attributes */
 window.closeMenu = closeMenu;
+/* ── VIEW ALL PROJECTS toggle ── */
+function toggleMoreProjects(){
+  const wrap   = document.getElementById('moreProjects');
+  const btn    = document.getElementById('btnViewAll');
+  const btnTxt = document.getElementById('btnViewAllText');
+  const btnIco = document.getElementById('btnViewAllIcon');
+  if(!wrap) return;
+
+  const isOpen = wrap.classList.contains('open');
+
+  if(!isOpen){
+    wrap.classList.add('open');
+    btn.classList.add('open');
+    btnTxt.textContent = 'Show Less';
+    // animate reveal-more items in staggered
+    wrap.querySelectorAll('.reveal-more').forEach((el,i)=>{
+      setTimeout(()=>el.classList.add('visible'), i*120);
+    });
+  } else {
+    wrap.classList.remove('open');
+    btn.classList.remove('open');
+    btnTxt.textContent = 'View All Projects';
+    wrap.querySelectorAll('.reveal-more').forEach(el=>el.classList.remove('visible'));
+    // scroll back up to button smoothly
+    btn.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+window.toggleMoreProjects = toggleMoreProjects;
+
+/* ── EVENTOHUB VIDEO ── */
+const vid = document.getElementById('eventoVideo');
+const placeholder = document.getElementById('videoPlaceholder');
+if(vid && placeholder){
+  // Try to play video — show it when ready, hide placeholder
+  function showVideo(){
+    vid.style.display = 'block';
+    placeholder.style.display = 'none';
+    vid.play().catch(()=>{});
+  }
+
+  // Already have data
+  if(vid.readyState >= 2){
+    showVideo();
+  } else {
+    vid.addEventListener('canplay', showVideo, {once:true});
+    vid.addEventListener('loadeddata', showVideo, {once:true});
+  }
+
+  // On error — keep placeholder visible
+  vid.addEventListener('error', ()=>{
+    vid.style.display = 'none';
+    placeholder.style.display = 'flex';
+    placeholder.querySelector('.vp-badge').textContent = 'Coming Soon';
+    placeholder.querySelector('.vp-sub').textContent = 'App preview video\nwill appear here';
+  });
+
+  // Force load
+  vid.load();
+}
