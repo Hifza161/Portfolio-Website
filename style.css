@@ -950,7 +950,8 @@ footer strong{color:var(--cyan);}
     direction:ltr;
     gap:2rem;
   }
-  .proj-visual{ order:-1; } /* mockup on top on mobile */
+  .proj-visual{ order:2; } /* mockup BELOW info on mobile */
+  .proj-info{ order:1; }   /* info always on top on mobile */
   .proj-small-row{ grid-template-columns:1fr 1fr; }
 }
 @media(max-width:600px){
